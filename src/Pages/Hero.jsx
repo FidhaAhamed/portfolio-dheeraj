@@ -1,25 +1,65 @@
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaTelegramPlane,
+  FaInstagram,
+  FaWhatsapp,
+} from 'react-icons/fa';
+
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 text-white bg-[#111] font-jost">
-      <h1 className="text-6xl md:text-7xl font-bold tracking-wide">Graphic</h1>
-      <h1 className="text-6xl md:text-7xl font-bold tracking-wide">Designer</h1>
-      <p className="italic text-sm max-w-md text-center mt-4">
-        “I strive to create designs that not only look great but also deliver seamless and engaging interactions...”
-      </p>
+    <section className="min-h-screen bg-[#121212] text-white px-6 md:px-16 py-20 font-instrument relative overflow-hidden">
+      {/* Main Text Row */}
+      <div className="flex justify-center w-full gap-16 flex-col md:flex-row">
+        {/* Left Side: Graphic + Description */}
+        <div className="flex flex-col gap-6 max-w-xl">
+          <h1 className="text-7xl md:text-9xl font-bale leading-none">Graphic</h1>
+          <p className="font-instrument italic text-base leading-relaxed max-w-sm">
+            “I strive to create designs that not only look great but also deliver seamless and engaging interactions.
+            Let’s collaborate to bring your vision to life and make a lasting impact through exceptional design.”
+          </p>
+        </div>
 
-      {/* Social Links */}
-      <div className="flex gap-4 mt-6 flex-wrap justify-center">
-        {["GitHub", "LinkedIn", "Telegram", "Instagram", "WhatsApp"].map((platform) => (
-          <button key={platform} className="px-4 py-1 rounded-full border text-sm">
-            {platform}
+        {/* Right Side: Designer, aligned under 'c' */}
+        <div className="mt-0 md:mt-36">
+          <h1 className="text-7xl md:text-9xl font-bale leading-none">Designer</h1>
+        </div>
+      </div>
+
+      {/* Social Buttons */}
+      <div className="flex flex-wrap justify-center gap-4 mt-16">
+        {[
+          { icon: <FaGithub />, label: 'GitHub' },
+          { icon: <FaLinkedinIn />, label: 'LinkedIn' },
+          { icon: <FaTelegramPlane />, label: 'Telegram' },
+          { icon: <FaInstagram />, label: 'Instagram' },
+          { icon: <FaWhatsapp />, label: 'WhatsApp' },
+        ].map(({ icon, label }) => (
+          <button
+            key={label}
+            className="flex items-center gap-2 px-5 py-1 rounded-full border border-white text-sm font-instrument italic hover:bg-white hover:text-black transition-all"
+          >
+            <span>{icon}</span>
+            <span>{label}</span>
           </button>
         ))}
       </div>
 
       {/* Projects Button */}
-      <button className="mt-8 flex items-center gap-2 bg-white text-black px-6 py-2 rounded-full italic">
-        projects <span className="text-lg">↓</span>
-      </button>
+      <div className="mt-16 flex justify-center">
+        <div className="flex items-center">
+          <span className="bg-white text-black italic font-instrument px-8 py-1 rounded-full">
+            projects
+          </span>
+          <span className="bg-white px-2">
+            {/* to remove visual gap between buttons */}
+          </span>
+          <span className="bg-white text-black px-3 py-1 rounded-full text-lg">↓</span>
+        </div>
+      </div>
+
+      {/* Decorative Circle Arc */}
+      <div className="absolute bottom-0 right-0 w-72 h-72 border-t border-l border-white rounded-full translate-x-1/2 translate-y-1/2 opacity-20 " />
     </section>
   );
 }

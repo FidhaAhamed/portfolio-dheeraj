@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
+        bale: ['"Bale Mono"', 'monospace'],
+        instrument: ['"Instrument Serif"', 'serif'],
       },
     },
   },
