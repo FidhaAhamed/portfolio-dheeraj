@@ -1,7 +1,7 @@
 import {
   FaGithub,
   FaLinkedinIn,
-  FaTelegramPlane,
+  FaTelegram,
   FaInstagram,
   FaWhatsapp,
 } from 'react-icons/fa';
@@ -27,11 +27,11 @@ export default function Hero() {
       </div>
 
       {/* Social Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mt-16">
+      <div className="flex flex-wrap justify-center gap-24 mt-16">
         {[
           { icon: <FaGithub />, label: 'GitHub' },
           { icon: <FaLinkedinIn />, label: 'LinkedIn' },
-          { icon: <FaTelegramPlane />, label: 'Telegram' },
+          { icon: <FaTelegram />, label: 'Telegram' },
           { icon: <FaInstagram />, label: 'Instagram' },
           { icon: <FaWhatsapp />, label: 'WhatsApp' },
         ].map(({ icon, label }) => (
@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="mt-16 flex justify-center">
         <div className="flex items-center">
           <span className="bg-white text-black italic font-instrument px-8 py-1 rounded-full">
-            projects
+            Projects
           </span>
           <span className="bg-white px-2">
             {/* to remove visual gap between buttons */}
@@ -58,8 +58,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative Circle Arc */}
-      <div className="absolute bottom-0 right-0 w-72 h-72 border-t border-l border-white rounded-full translate-x-1/2 translate-y-1/2 opacity-20 " />
     </section>
   );
 }
